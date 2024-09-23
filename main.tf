@@ -1,3 +1,5 @@
+variable "name" {}
+
 resource "null_resource" "cluster" {}
 
 data "tfe_organization" "test-organization" {
