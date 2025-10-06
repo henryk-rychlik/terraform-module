@@ -1,14 +1,14 @@
 variable "name" {}
-
-resource "null_resource" "cluster" {}
+#variable "attribute" {}
 
 data "tfe_organization" "test-organization" {
-  name  = "hrychlik"
-#  email = "admin@company.com"
+  name = "hrychlik"
+  #  email = "admin@company.com"
 }
 
 resource "tfe_workspace" "test" {
-  name         = "my-workspace-name"
+  name         = var.name
   organization = data.tfe_organization.test-organization.name
-  tag_names    = ["test", "app"]
+  #  tag_names    = [ var.attribute ]
 }
+
